@@ -10,9 +10,13 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="DeviceRead.vi" Type="VI" URL="../DeviceRead.vi"/>
 		<Item Name="net_cycle.vi" Type="VI" URL="../net_cycle.vi"/>
 		<Item Name="net_cycle_thread.vi" Type="VI" URL="../net_cycle_thread.vi"/>
 		<Item Name="open_relay.vi" Type="VI" URL="../open_relay.vi"/>
+		<Item Name="serial_cycle_thread.vi" Type="VI" URL="../serial_cycle_thread.vi"/>
+		<Item Name="serial_cycle_thread_single.vi" Type="VI" URL="../serial_cycle_thread_single.vi"/>
+		<Item Name="serial_read.vi" Type="VI" URL="../serial_read.vi"/>
 		<Item Name="TCPConnectSendRead.vi" Type="VI" URL="../TCPConnectSendRead.vi"/>
 		<Item Name="依赖关系" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
@@ -20,14 +24,18 @@
 				<Item Name="VISA Configure Serial Port" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port"/>
 				<Item Name="VISA Configure Serial Port (Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Instr).vi"/>
 				<Item Name="VISA Configure Serial Port (Serial Instr).vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Configure Serial Port (Serial Instr).vi"/>
+				<Item Name="VISA Flush IO Buffer Mask.ctl" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Flush IO Buffer Mask.ctl"/>
 				<Item Name="VISA Lock Async.vi" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Lock Async.vi"/>
+				<Item Name="VISA Set IO Buffer Mask.ctl" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Set IO Buffer Mask.ctl"/>
 			</Item>
+			<Item Name="search_str.vi" Type="VI" URL="../../NetAssist/search_str.vi"/>
 		</Item>
 		<Item Name="程序生成规范" Type="Build">
+			<Property Name="NI.SortType" Type="Int">3</Property>
 			<Item Name="我的安装程序" Type="Installer">
 				<Property Name="Destination[0].name" Type="Str">NetCycle</Property>
 				<Property Name="Destination[0].parent" Type="Str">{3912416A-D2E5-411B-AFEE-B63654D690C0}</Property>
-				<Property Name="Destination[0].tag" Type="Str">{CFE8A53B-6ABC-4EAD-825F-0B903BB341F9}</Property>
+				<Property Name="Destination[0].tag" Type="Str">{E2317492-1F85-4BDF-8065-9C7E7109E78C}</Property>
 				<Property Name="Destination[0].type" Type="Str">userFolder</Property>
 				<Property Name="DestinationCount" Type="Int">1</Property>
 				<Property Name="DistPart[0].flavorID" Type="Str">_deployment_</Property>
@@ -80,7 +88,7 @@
 				<Property Name="INST_buildLocation" Type="Path">../builds/NetCycle/我的安装程序</Property>
 				<Property Name="INST_buildLocation.type" Type="Str">relativeToCommon</Property>
 				<Property Name="INST_buildSpecName" Type="Str">我的安装程序</Property>
-				<Property Name="INST_defaultDir" Type="Str">{CFE8A53B-6ABC-4EAD-825F-0B903BB341F9}</Property>
+				<Property Name="INST_defaultDir" Type="Str">{E2317492-1F85-4BDF-8065-9C7E7109E78C}</Property>
 				<Property Name="INST_installerName" Type="Str">install.exe</Property>
 				<Property Name="INST_language" Type="Int">2052</Property>
 				<Property Name="INST_productName" Type="Str">NetCycle</Property>
@@ -88,36 +96,36 @@
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">20008014</Property>
 				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
-				<Property Name="MSI_distID" Type="Str">{6458E31F-F2FD-49C6-83A4-18D65BA42BA4}</Property>
+				<Property Name="MSI_distID" Type="Str">{4A3B341E-C1FB-46DD-A97F-83C0029A2056}</Property>
 				<Property Name="MSI_hideNonRuntimes" Type="Bool">true</Property>
 				<Property Name="MSI_osCheck" Type="Int">0</Property>
-				<Property Name="MSI_upgradeCode" Type="Str">{656A9A6D-E50F-4E42-B0A3-EB21CB1EA470}</Property>
+				<Property Name="MSI_upgradeCode" Type="Str">{EFD5E953-D9B1-48B9-BCFD-7F43E1CE3A18}</Property>
 				<Property Name="RegDest[0].dirName" Type="Str">Software</Property>
 				<Property Name="RegDest[0].dirTag" Type="Str">{DDFAFC8B-E728-4AC8-96DE-B920EBB97A86}</Property>
 				<Property Name="RegDest[0].parentTag" Type="Str">2</Property>
 				<Property Name="RegDestCount" Type="Int">1</Property>
-				<Property Name="Source[0].dest" Type="Str">{CFE8A53B-6ABC-4EAD-825F-0B903BB341F9}</Property>
-				<Property Name="Source[0].File[0].dest" Type="Str">{CFE8A53B-6ABC-4EAD-825F-0B903BB341F9}</Property>
+				<Property Name="Source[0].dest" Type="Str">{E2317492-1F85-4BDF-8065-9C7E7109E78C}</Property>
+				<Property Name="Source[0].File[0].dest" Type="Str">{E2317492-1F85-4BDF-8065-9C7E7109E78C}</Property>
 				<Property Name="Source[0].File[0].name" Type="Str">应用程序.exe</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].destIndex" Type="Int">0</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].name" Type="Str">应用程序</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].subDir" Type="Str">NetCycle</Property>
 				<Property Name="Source[0].File[0].ShortcutCount" Type="Int">1</Property>
-				<Property Name="Source[0].File[0].tag" Type="Str">{46789EB3-74BE-4880-BAEB-1C320E963A8A}</Property>
+				<Property Name="Source[0].File[0].tag" Type="Str">{9AEDAD2A-A582-4F79-8D91-CF3B50BE70B9}</Property>
 				<Property Name="Source[0].FileCount" Type="Int">1</Property>
 				<Property Name="Source[0].name" Type="Str">我的应用程序</Property>
-				<Property Name="Source[0].tag" Type="Ref">/我的电脑/程序生成规范/我的应用程序</Property>
+				<Property Name="Source[0].tag" Type="Ref"></Property>
 				<Property Name="Source[0].type" Type="Str">EXE</Property>
 				<Property Name="SourceCount" Type="Int">1</Property>
 			</Item>
 			<Item Name="我的应用程序" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{B195E8E3-43E2-45F0-996C-B0FB4E1B0AE2}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{B265BA77-133A-4158-B932-8A5CBD9D39D0}</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{30F8E9AB-32B9-463E-8A89-4EFA7B792C28}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{D193DAFA-D335-4CA8-9869-AA2F7CD94D3D}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="App_serverType" Type="Int">0</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{B7D76316-03EF-4A4F-B60D-568BEDF2B959}</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{F3694454-5FAA-43D4-AAD0-A6B83D7D42C8}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">我的应用程序</Property>
 				<Property Name="Bld_defaultLanguage" Type="Str">ChineseS</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
@@ -126,7 +134,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/我的应用程序</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{BF548BBA-2D0E-4D22-9229-F4735DDE196F}</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{D95F7943-0CEF-4851-9B15-EDE83A822A56}</Property>
 				<Property Name="Bld_version.build" Type="Int">1</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">应用程序.exe</Property>
@@ -136,41 +144,41 @@
 				<Property Name="Destination[1].destName" Type="Str">支持目录</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/我的应用程序/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{DD5A1356-CE5D-4A1B-980E-DA4C7EAC8B74}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{D282CA42-BC71-4BE7-BB85-77E24B5426B4}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/net_cycle.vi</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/DeviceRead.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/我的电脑/net_cycle_thread.vi</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/我的电脑/serial_read.vi</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/我的电脑/open_relay.vi</Property>
-				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/我的电脑/serial_cycle_thread_single.vi</Property>
+				<Property Name="Source[3].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
 				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/我的电脑/TCPConnectSendRead.vi</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/我的电脑/open_relay.vi</Property>
 				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[4].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">5</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">我的应用程序</Property>
 				<Property Name="TgtF_internalName" Type="Str">我的应用程序</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">版权 2021 </Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">版权 2022 </Property>
 				<Property Name="TgtF_productName" Type="Str">我的应用程序</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{46789EB3-74BE-4880-BAEB-1C320E963A8A}</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{2039A5D9-2972-4BCB-B71F-3A3D7ADF00A1}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">应用程序.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 			<Item Name="我的应用程序2" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{E5572412-AB8C-4497-A7F1-E6AFD0EA8B8D}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{8873650C-C4C3-447B-A94F-928209ED4965}</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{86730264-3A29-49E6-839D-BCE14BBCC86F}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{3CEFDAB6-28BA-4B57-832B-C068DFD8199A}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="App_serverType" Type="Int">0</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{8E6598D2-9793-489F-817B-220ED1363C9E}</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{80010D2D-4883-410A-BF70-084736894535}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">我的应用程序2</Property>
 				<Property Name="Bld_defaultLanguage" Type="Str">ChineseS</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
@@ -179,7 +187,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/我的应用程序2</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{FE8F179B-1A6F-4F95-A292-8400C8A86548}</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{F6BD090D-735C-407D-AC7B-FAEF37C87487}</Property>
 				<Property Name="Bld_version.build" Type="Int">1</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">应用程序.exe</Property>
@@ -189,41 +197,29 @@
 				<Property Name="Destination[1].destName" Type="Str">支持目录</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/我的应用程序2/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{0DA9BA72-ADD2-427F-A08E-77E04D3E17F5}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{AFB81258-B70E-4E96-ABE2-22AA8F4FED76}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/net_cycle_thread.vi</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/serial_cycle_thread_single.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/我的电脑/net_cycle.vi</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[2].type" Type="Str">VI</Property>
-				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/我的电脑/open_relay.vi</Property>
-				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[3].type" Type="Str">VI</Property>
-				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/我的电脑/TCPConnectSendRead.vi</Property>
-				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[4].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">5</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">我的应用程序2</Property>
 				<Property Name="TgtF_internalName" Type="Str">我的应用程序2</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">版权 2021 </Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">版权 2022 </Property>
 				<Property Name="TgtF_productName" Type="Str">我的应用程序2</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{7E4E4F37-0D48-41CE-B95C-006871DE9E53}</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{489A28C8-AFA3-4F4B-942B-A4A475E96817}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">应用程序.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 			<Item Name="我的应用程序3" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{23E87C9C-F00C-4731-B726-A90CAFF30DC7}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{19FD5F78-B73A-4E5E-BD15-1B5F7105C97B}</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{A18D90F3-08FC-40AF-8A56-357E18E7C86F}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{C2EF808C-A2B1-4A93-B807-DF5FB97B821D}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="App_serverType" Type="Int">0</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{2D987EBA-6626-430C-B778-3A27E57D6385}</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{C9EE0FA3-674F-41B4-949E-606E909B5BB3}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">我的应用程序3</Property>
 				<Property Name="Bld_defaultLanguage" Type="Str">ChineseS</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
@@ -232,7 +228,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/我的应用程序3</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{26B09947-732E-4BEA-9859-E6B248B71CA9}</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{779CD24C-A169-4BCB-BD30-12D50D91E2CD}</Property>
 				<Property Name="Bld_version.build" Type="Int">1</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">应用程序.exe</Property>
@@ -242,41 +238,29 @@
 				<Property Name="Destination[1].destName" Type="Str">支持目录</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/我的应用程序3/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{6D761E4F-8C88-43DC-ACBA-B2E3C461AB7B}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{212B25D8-D1BF-4C0C-8A3F-47C16F9C720A}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/net_cycle.vi</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/serial_cycle_thread_single.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/我的电脑/net_cycle_thread.vi</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">TopLevel</Property>
-				<Property Name="Source[2].type" Type="Str">VI</Property>
-				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/我的电脑/open_relay.vi</Property>
-				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[3].type" Type="Str">VI</Property>
-				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/我的电脑/TCPConnectSendRead.vi</Property>
-				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[4].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">5</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">我的应用程序3</Property>
 				<Property Name="TgtF_internalName" Type="Str">我的应用程序3</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">版权 2021 </Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">版权 2022 </Property>
 				<Property Name="TgtF_productName" Type="Str">我的应用程序3</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{CCB80CC8-99F2-4BCA-BE08-4F35BB290F84}</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{999D7B17-54A4-4EAD-A48F-51E27C66857A}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">应用程序.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 			<Item Name="我的应用程序4" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{9D8D3325-D6B1-4A53-8AB1-F3BE326F218C}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{17B6091C-8274-4F1D-ACF4-509C093BA9AE}</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{F7E2B576-928A-41A1-A83A-91A81DFA5879}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{C926868D-2DAD-4BAF-A8C8-3D2002428779}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="App_serverType" Type="Int">0</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{9EE12F02-EACF-4A47-9082-92061008F91B}</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{FC2DCD9A-B67C-4ECF-9DE2-89A396C5E2BF}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">我的应用程序4</Property>
 				<Property Name="Bld_defaultLanguage" Type="Str">ChineseS</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
@@ -285,7 +269,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/我的应用程序4</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{37A7AEDA-DB82-428B-8006-BC6BA28F2885}</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{5F682096-B05E-4815-B52B-E71F261965E2}</Property>
 				<Property Name="Bld_version.build" Type="Int">1</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">应用程序.exe</Property>
@@ -295,37 +279,29 @@
 				<Property Name="Destination[1].destName" Type="Str">支持目录</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/我的应用程序4/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{8438D53E-37FE-497B-BD55-631A49A08189}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{212B25D8-D1BF-4C0C-8A3F-47C16F9C720A}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/net_cycle_thread.vi</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/serial_cycle_thread_single.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/我的电脑/TCPConnectSendRead.vi</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[2].type" Type="Str">VI</Property>
-				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/我的电脑/open_relay.vi</Property>
-				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[3].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">4</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">我的应用程序4</Property>
 				<Property Name="TgtF_internalName" Type="Str">我的应用程序4</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">版权 2021 </Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">版权 2022 </Property>
 				<Property Name="TgtF_productName" Type="Str">我的应用程序4</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{1DCB412C-D023-46EF-87A9-B3ED692DD6E9}</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{0FF0330F-1A8B-4C23-9FA6-9940FD9A40E2}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">应用程序.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 			<Item Name="我的应用程序5" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{F7111DF5-74A8-4678-BEAB-68EC53A33474}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{E273B74E-706A-4341-93BF-64A683869E9B}</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{5DAFD28C-10D6-48D4-9550-9E51AEB557F4}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{3E28BAA6-313E-448E-A8C5-E5406C537822}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="App_serverType" Type="Int">0</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{424D8D46-A12D-467E-8704-E578D23EAE62}</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{AD0F696E-DA40-4FA0-8355-1458747BDD08}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">我的应用程序5</Property>
 				<Property Name="Bld_defaultLanguage" Type="Str">ChineseS</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
@@ -334,7 +310,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/我的应用程序5</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{BE01FF78-F85F-48C3-94CE-96C3EA9D1DF8}</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{874A1571-EB73-4208-8EAE-E2BAE39A8E84}</Property>
 				<Property Name="Bld_version.build" Type="Int">1</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">应用程序.exe</Property>
@@ -344,37 +320,29 @@
 				<Property Name="Destination[1].destName" Type="Str">支持目录</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/我的应用程序5/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{AAA03E82-DD54-4364-8CDE-E278B98426C4}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{0352C974-D83D-4660-8C1C-872EEB57DC4C}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/open_relay.vi</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/serial_cycle_thread_single.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/我的电脑/net_cycle_thread.vi</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">TopLevel</Property>
-				<Property Name="Source[2].type" Type="Str">VI</Property>
-				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/我的电脑/TCPConnectSendRead.vi</Property>
-				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[3].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">4</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">我的应用程序5</Property>
 				<Property Name="TgtF_internalName" Type="Str">我的应用程序5</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">版权 2021 </Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">版权 2022 </Property>
 				<Property Name="TgtF_productName" Type="Str">我的应用程序5</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{6105C780-5902-4455-9968-73EC851B32CA}</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{32592EC2-C123-4140-8CB3-B78D860D6BA1}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">应用程序.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 			<Item Name="我的应用程序6" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{0F9961A6-0025-4FF4-BF0F-302F19BB1048}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{09029FDF-ED9D-491C-B7F6-8290263AC758}</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{9F4403A3-0DA1-4BF9-AC95-AAC91B5AC263}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{D66C68D6-30D1-4B07-8A73-C738354CEEDB}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="App_serverType" Type="Int">0</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{05CCE5BC-30E8-49BF-9507-58CA4B5AD589}</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{6D0B69C4-BBA1-4392-A032-B99573A0C087}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">我的应用程序6</Property>
 				<Property Name="Bld_defaultLanguage" Type="Str">ChineseS</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
@@ -383,7 +351,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/我的应用程序6</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{57B16F17-21F5-4F90-86B3-84C94833AE9E}</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{71876466-E579-40B4-8ACB-A50CC6052303}</Property>
 				<Property Name="Bld_version.build" Type="Int">1</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">应用程序.exe</Property>
@@ -393,26 +361,18 @@
 				<Property Name="Destination[1].destName" Type="Str">支持目录</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/我的应用程序6/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{700D744F-874C-45C9-ACE6-9324224DA1BB}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{2DA77EA4-F68A-4FCF-9E7C-A2359CE9FFB3}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/net_cycle_thread.vi</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/serial_cycle_thread_single.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/我的电脑/open_relay.vi</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[2].type" Type="Str">VI</Property>
-				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/我的电脑/TCPConnectSendRead.vi</Property>
-				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[3].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">4</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">我的应用程序6</Property>
 				<Property Name="TgtF_internalName" Type="Str">我的应用程序6</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">版权 2021 </Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">版权 2022 </Property>
 				<Property Name="TgtF_productName" Type="Str">我的应用程序6</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{2B761984-FF79-4493-9AD5-8C84AB6C9642}</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{FE5AEA35-F87E-454B-B94C-EBC064E1F0F6}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">应用程序.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
